@@ -2,3 +2,5 @@
 _preview/
 _preview*.pdf
 .DS_Store
+
+/.quarto/
