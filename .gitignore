@@ -1,0 +1,4 @@
+.quarto/
+_preview/
+_preview*.pdf
+.DS_Store
