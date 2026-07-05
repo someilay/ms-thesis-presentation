@@ -17,6 +17,7 @@ author:
 date: '07/09/2026'
 date-format: medium
 lang: ru
+output-file: index.html
 format:
     revealjs:
         theme: [default, styles/inno_style.scss]
