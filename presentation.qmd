@@ -300,7 +300,7 @@ $$
 ::: {.fragment .fade-up}
 * С $\hat{\pmb{\Phi}} = \mathbf{I} + \pmb{\Phi}$ ограниченное ускорение (с матрицей распределения $\mathbf{B}$ для систем с неполным приводом):
 $$
-\dot{\mathbf{v}} = \mathbf{M}^{-1}\big[\bar{\pmb{\Phi}}\,\mathbf{n} + \bar{\pmb{\Phi}}\,\mathbf{B}\,\mathbf{u} + \pmb{\beta}\big]
+\dot{\mathbf{v}} = \mathbf{M}^{-1}\big[\hat{\pmb{\Phi}}\,\mathbf{n} + \hat{\pmb{\Phi}}\,\mathbf{B}\,\mathbf{u} + \pmb{\beta}\big]
 $$
 :::
 
@@ -312,8 +312,8 @@ $$
 
 * Требование $\mathbf{A}_\text{task}\dot{\mathbf{v}} = \mathbf{b}_\text{task}$ даёт линейную систему по управлению $\mathbf{W}\,\mathbf{u} = \pmb{\varepsilon}$, где
 $$
-\mathbf{W} = \mathbf{A}_\text{task}\mathbf{M}^{-1}\bar{\pmb{\Phi}}\mathbf{B}, \qquad
-\pmb{\varepsilon} = \mathbf{b}_\text{task} - \mathbf{A}_\text{task}\mathbf{M}^{-1}(\bar{\pmb{\Phi}}\mathbf{n} + \pmb{\beta})
+\mathbf{W} = \mathbf{A}_\text{task}\mathbf{M}^{-1}\hat{\pmb{\Phi}}\mathbf{B}, \qquad
+\pmb{\varepsilon} = \mathbf{b}_\text{task} - \mathbf{A}_\text{task}\mathbf{M}^{-1}(\hat{\pmb{\Phi}}\mathbf{n} + \pmb{\beta})
 $$
 
 ::: {.fragment .fade-up}
@@ -353,7 +353,7 @@ $$
 
 1. Вычислить $\hat{\pmb{\Phi}}, \pmb{\beta}$ (физический слой) и $\mathbf{W}, \pmb{\varepsilon}$ (функциональный слой)
 2. Проекция на ядро: $\;\mathbf{u}_c \gets (\mathbf{I} - \mathbf{W}^{+}\mathbf{W})(\mathbf{u}_t + \delta\mathbf{u}_t^{(k)}) + \mathbf{W}^{+}\pmb{\varepsilon}$
-3. Ограниченное ускорение: $\;\dot{\mathbf{v}} \gets \mathbf{M}^{-1}[\bar{\pmb{\Phi}}(\mathbf{B}\mathbf{u}_c + \mathbf{n}) + \pmb{\beta}]$
+3. Ограниченное ускорение: $\;\dot{\mathbf{v}} \gets \mathbf{M}^{-1}[\hat{\pmb{\Phi}}(\mathbf{B}\mathbf{u}_c + \mathbf{n}) + \pmb{\beta}]$
 4. Накопить стоимость $\tilde{S}_k$, проинтегрировать состояние
 
 ::: {.fragment .fade-up}

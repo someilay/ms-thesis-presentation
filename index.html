@@ -459,7 +459,7 @@ flowchart LR
 <div class="fragment fade-up">
 <ul>
 <li>С <span class="math inline">\(\hat{\pmb{\Phi}} = \mathbf{I} + \pmb{\Phi}\)</span> ограниченное ускорение (с матрицей распределения <span class="math inline">\(\mathbf{B}\)</span> для систем с неполным приводом): <span class="math display">\[
-\dot{\mathbf{v}} = \mathbf{M}^{-1}\big[\bar{\pmb{\Phi}}\,\mathbf{n} + \bar{\pmb{\Phi}}\,\mathbf{B}\,\mathbf{u} + \pmb{\beta}\big]
+\dot{\mathbf{v}} = \mathbf{M}^{-1}\big[\hat{\pmb{\Phi}}\,\mathbf{n} + \hat{\pmb{\Phi}}\,\mathbf{B}\,\mathbf{u} + \pmb{\beta}\big]
 \]</span></li>
 </ul>
 </div>
@@ -473,8 +473,8 @@ flowchart LR
 <h2>Функциональный слой</h2>
 <ul>
 <li>Требование <span class="math inline">\(\mathbf{A}_\text{task}\dot{\mathbf{v}} = \mathbf{b}_\text{task}\)</span> даёт линейную систему по управлению <span class="math inline">\(\mathbf{W}\,\mathbf{u} = \pmb{\varepsilon}\)</span>, где <span class="math display">\[
-\mathbf{W} = \mathbf{A}_\text{task}\mathbf{M}^{-1}\bar{\pmb{\Phi}}\mathbf{B}, \qquad
-\pmb{\varepsilon} = \mathbf{b}_\text{task} - \mathbf{A}_\text{task}\mathbf{M}^{-1}(\bar{\pmb{\Phi}}\mathbf{n} + \pmb{\beta})
+\mathbf{W} = \mathbf{A}_\text{task}\mathbf{M}^{-1}\hat{\pmb{\Phi}}\mathbf{B}, \qquad
+\pmb{\varepsilon} = \mathbf{b}_\text{task} - \mathbf{A}_\text{task}\mathbf{M}^{-1}(\hat{\pmb{\Phi}}\mathbf{n} + \pmb{\beta})
 \]</span></li>
 </ul>
 <div class="fragment fade-up">
@@ -518,7 +518,7 @@ flowchart LR
 <ol type="1">
 <li>Вычислить <span class="math inline">\(\hat{\pmb{\Phi}}, \pmb{\beta}\)</span> (физический слой) и <span class="math inline">\(\mathbf{W}, \pmb{\varepsilon}\)</span> (функциональный слой)</li>
 <li>Проекция на ядро: <span class="math inline">\(\;\mathbf{u}_c \gets (\mathbf{I} - \mathbf{W}^{+}\mathbf{W})(\mathbf{u}_t + \delta\mathbf{u}_t^{(k)}) + \mathbf{W}^{+}\pmb{\varepsilon}\)</span></li>
-<li>Ограниченное ускорение: <span class="math inline">\(\;\dot{\mathbf{v}} \gets \mathbf{M}^{-1}[\bar{\pmb{\Phi}}(\mathbf{B}\mathbf{u}_c + \mathbf{n}) + \pmb{\beta}]\)</span></li>
+<li>Ограниченное ускорение: <span class="math inline">\(\;\dot{\mathbf{v}} \gets \mathbf{M}^{-1}[\hat{\pmb{\Phi}}(\mathbf{B}\mathbf{u}_c + \mathbf{n}) + \pmb{\beta}]\)</span></li>
 <li>Накопить стоимость <span class="math inline">\(\tilde{S}_k\)</span>, проинтегрировать состояние</li>
 </ol>
 <div class="fragment fade-up">
