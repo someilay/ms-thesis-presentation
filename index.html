@@ -213,8 +213,8 @@
 </div>
 </div></div>
 </section>
-<section id="постановка-задачи-mppi-и-его-пробел" class="slide level2">
-<h2>Постановка задачи: MPPI и его пробел</h2>
+<section id="постановка-задачи-mppi-и-его-недостатки" class="slide level2">
+<h2>Постановка задачи: MPPI и его недостатки</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
 <ul>
@@ -337,25 +337,23 @@ S(\tau) = \phi(\tau(t_e)) + \int_0^T \!\big[\psi(\tau) + \tfrac{1}{2}\mathbf{u}^
 <div class="fragment fade-up">
 <p>Остаточное нарушение зависит от веса штрафа, числа выборок и <span class="math inline">\(\lambda\)</span> — <span style="color:red;">ни границы, ни сходимости</span>.</p>
 </div>
-</section>
-<section id="литературный-обзор-другие-подходы" class="slide level2 smaller">
-<h2>Литературный обзор: другие подходы</h2>
-<ul>
-<li><strong>Tube-MPPI</strong> <span class="citation" data-cites="TubeMPPI"><a href="#/список-литературы" role="doc-biblioref" onclick="">[13]</a></span> — управление ковариацией в «трубке», только <strong>линейная</strong> динамика</li>
-<li><strong>MPPI-IPDDP</strong> <span class="citation" data-cites="MPPIIPDDP"><a href="#/список-литературы" role="doc-biblioref" onclick="">[14]</a></span> — коридор + IPDDP, <span class="math inline">\(\|h\| \leq 10^{-6}\)</span>, но <strong>офлайн</strong></li>
-<li><strong>π-MPPI</strong> <span class="citation" data-cites="piMPPI"><a href="#/список-литературы" role="doc-biblioref" onclick="">[15]</a></span> — проекционный фильтр в пространстве <strong>управления</strong></li>
-<li><strong>o-MPPI</strong> <span class="citation" data-cites="oMPPI"><a href="#/список-литературы" role="doc-biblioref" onclick="">[16]</a></span> — семплирование в пространстве состояний</li>
-</ul>
-<div class="fragment fade-up">
-<p>Архитектурно идея проекции на <span class="math inline">\(\mathcal{M}\)</span> применима, но для общих равенств <span style="color:red;">не продемонстрирована</span>.</p>
-</div>
+<!-- ## Литературный обзор: другие подходы {.smaller}
+
+- **Tube-MPPI** [@TubeMPPI] --- управление ковариацией в «трубке», только **линейная** динамика
+- **MPPI-IPDDP** [@MPPIIPDDP] --- коридор + IPDDP, $\|h\| \leq 10^{-6}$, но **офлайн**
+- **π-MPPI** [@piMPPI] --- проекционный фильтр в пространстве **управления**
+- **o-MPPI** [@oMPPI] --- семплирование в пространстве состояний
+
+::: {.fragment .fade-up}
+Архитектурно идея проекции на $\mathcal{M}$ применима, но для общих равенств [не продемонстрирована]{style="color:red;"}.
+::: -->
 </section>
 <section id="литературный-обзор-ближе-всего-к-равенствам" class="slide level2 smaller">
 <h2>Литературный обзор: ближе всего к равенствам</h2>
 <p>Методы, обеспечивающие <span class="math inline">\(h(\mathbf{x}) = 0\)</span> с точностью решателя:</p>
 <ul>
-<li><strong>CSVTO</strong> <span class="citation" data-cites="CSVTO"><a href="#/список-литературы" role="doc-biblioref" onclick="">[17]</a></span> — SVGD с ограничениями, работает с многообразиями нулевой меры, но <strong>офлайн</strong> и вычислительно дорого</li>
-<li><strong>CSMPC</strong> <span class="citation" data-cites="WangCSMPC"><a href="#/список-литературы" role="doc-biblioref" onclick="">[18]</a></span> — иерархическая оптимизация Лагранж + проекция, равенства <strong>в реальном времени</strong>, но лишь для <strong>линейных</strong> ограничений</li>
+<li><strong>CSVTO</strong> <span class="citation" data-cites="CSVTO"><a href="#/список-литературы" role="doc-biblioref" onclick="">[13]</a></span> — SVGD с ограничениями, работает с многообразиями нулевой меры, но <strong>офлайн</strong> и вычислительно дорого</li>
+<li><strong>CSMPC</strong> <span class="citation" data-cites="WangCSMPC"><a href="#/список-литературы" role="doc-biblioref" onclick="">[14]</a></span> — иерархическая оптимизация Лагранж + проекция, равенства <strong>в реальном времени</strong>, но лишь для <strong>линейных</strong> ограничений</li>
 </ul>
 <div class="fragment fade-up">
 <p><span style="color:red;">Вывод:</span> ни один метод не обеспечивает асимптотическую сходимость <span class="math inline">\(h(\mathbf{x}) \to 0\)</span> для <strong>общих нелинейных</strong> равенств в замкнутом контуре — лишь коридор, офлайн-подпрограмма или линейный случай.</p>
@@ -439,7 +437,7 @@ flowchart LR
 </div>
 <div class="fragment fade-up">
 <ul>
-<li>Решение Удвадия–Калабы <span class="citation" data-cites="UdwadiaKalabaApproach"><a href="#/список-литературы" role="doc-biblioref" onclick="">[19]</a></span> — сила реакций связей: <span class="math display">\[
+<li>Решение Удвадия–Калабы <span class="citation" data-cites="UdwadiaKalabaApproach"><a href="#/список-литературы" role="doc-biblioref" onclick="">[15]</a></span> — сила реакций связей: <span class="math display">\[
 \mathbf{n}_c = \mathbf{M}^{1/2}(\mathbf{A}\,\mathbf{M}^{-1/2})^{+}(\mathbf{b} - \mathbf{A}\,\mathbf{M}^{-1}(\mathbf{n} + \mathbf{u}))
 \]</span></li>
 </ul>
@@ -487,7 +485,7 @@ flowchart LR
 <div class="fragment fade-up">
 <ul>
 <li>Проектор <span class="math inline">\(\mathbf{N}\)</span> оставляет MPPI лишь подпространство управлений, совместимое с <span class="math inline">\(h_\text{task}\)</span></li>
-<li>Псевдообратная с регуляризацией Тихонова <span class="citation" data-cites="tikhonov1977"><a href="#/список-литературы" role="doc-biblioref" onclick="">[20]</a></span> — устойчивость вблизи сингулярностей</li>
+<li>Псевдообратная с регуляризацией Тихонова <span class="citation" data-cites="tikhonov1977"><a href="#/список-литературы" role="doc-biblioref" onclick="">[16]</a></span> — устойчивость вблизи сингулярностей</li>
 </ul>
 </div>
 </section>
@@ -498,7 +496,7 @@ flowchart LR
 </ul>
 <div class="fragment fade-up">
 <ul>
-<li>Баумгарт <span class="citation" data-cites="baumgarte1972"><a href="#/список-литературы" role="doc-biblioref" onclick="">[21]</a></span>: заменить <span class="math inline">\(\ddot{h}=0\)</span> критически демпфированной формой <span class="math display">\[
+<li>Баумгарт <span class="citation" data-cites="baumgarte1972"><a href="#/список-литературы" role="doc-biblioref" onclick="">[17]</a></span>: заменить <span class="math inline">\(\ddot{h}=0\)</span> критически демпфированной формой <span class="math display">\[
 \ddot{h} + 2\alpha\,\dot{h} + \alpha^2\,h = 0
 \]</span></li>
 </ul>
@@ -547,7 +545,7 @@ flowchart LR
 <div class="columns">
 <div class="column" style="width:60%;">
 <ul>
-<li>Python + <strong>MuJoCo MJX</strong> <span class="citation" data-cites="todorov2012mujoco"><a href="#/список-литературы" role="doc-biblioref" onclick="">[22]</a></span> + <strong>JAX/XLA</strong></li>
+<li>Python + <strong>MuJoCo MJX</strong> <span class="citation" data-cites="todorov2012mujoco"><a href="#/список-литературы" role="doc-biblioref" onclick="">[18]</a></span> + <strong>JAX/XLA</strong></li>
 <li>Весь цикл MPPI (проекции Гаусса и на ядро) компилируется в единое XLA-ядро и распараллеливается по прогонам на GPU</li>
 <li>MuJoCo даёт аналитический доступ к <span class="math inline">\(\mathbf{M}(\mathbf{q})\)</span>, <span class="math inline">\(\mathbf{n}(\mathbf{q},\mathbf{v})\)</span> и Якобианам</li>
 <li>Регуляризация Тихонова <span class="math inline">\(\lambda_\text{reg} = 5\cdot 10^{-4}\)</span></li>
@@ -689,7 +687,7 @@ flowchart LR
 </ul>
 <p><span style="color:blue;">Физическое ограничение</span> (<span class="math inline">\(m_\text{phys}=6\)</span>):</p>
 <ul>
-<li>замкнутая кинематическая цепь <span class="math inline">\(\mathbf{T}_L^{-1}\mathbf{T}_R = \mathbf{T}_\text{rel}^{\star}\)</span> (стабилизация на <span class="math inline">\(SO(3)\)</span> <span class="citation" data-cites="Milioshin2024UdwadiaKalaba"><a href="#/список-литературы" role="doc-biblioref" onclick="">[23]</a></span>)</li>
+<li>замкнутая кинематическая цепь <span class="math inline">\(\mathbf{T}_L^{-1}\mathbf{T}_R = \mathbf{T}_\text{rel}^{\star}\)</span> (стабилизация на <span class="math inline">\(SO(3)\)</span> <span class="citation" data-cites="Milioshin2024UdwadiaKalaba"><a href="#/список-литературы" role="doc-biblioref" onclick="">[19]</a></span>)</li>
 </ul>
 <p><span style="color:green;">Функциональное ограничение</span> (<span class="math inline">\(m_\text{task}=2\)</span>):</p>
 <ul>
@@ -956,38 +954,26 @@ flowchart LR
 <div id="ref-TDCDMPPI" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[12] </div><div class="csl-right-inline">P. N. Crestaz, L. D. Matteis, E. Chane-Sane, N. Mansard, и A. D. Prete, <span>«<span>TD-CD-MPPI</span>: Temporal-Difference Constraint-Discounted Model Predictive Path Integral Control»</span>, <em>IEEE Robotics and Automation Letters</em>, т. 11, вып. 1, сс. 498–505, 2026, doi: <a href="https://doi.org/10.1109/LRA.2025.3632612">10.1109/LRA.2025.3632612</a>.</div>
 </div>
-<div id="ref-TubeMPPI" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[13] </div><div class="csl-right-inline">I. M. Balci, E. Bakolas, B. Vlahov, и E. Theodorou, <span>«Constrained Covariance Steering Based <span>Tube-MPPI</span>»</span>, 2021, Доступно на: <a href="https://arxiv.org/abs/2110.07744">https://arxiv.org/abs/2110.07744</a></div>
-</div>
-<div id="ref-MPPIIPDDP" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[14] </div><div class="csl-right-inline">M.-G. Kim, M. Jung, J. Hong, и K.-K. K. Kim, <span>«<span>MPPI-IPDDP</span>: Hybrid Method of Collision-Free Smooth Trajectory Generation for Autonomous Robots»</span>, 2022, Доступно на: <a href="https://arxiv.org/abs/2208.02439">https://arxiv.org/abs/2208.02439</a></div>
-</div>
-<div id="ref-piMPPI" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[15] </div><div class="csl-right-inline">E. M. Andrejev, A. Manoharan, K.-E. Unt, и A. K. Singh, <span>«<span class="math inline">\(\pi\)</span>-<span>MPPI</span>: A Projection-based Model Predictive Path Integral Scheme for Smooth Optimal Control of Fixed-Wing Aerial Vehicles»</span>, <em>IEEE Robotics and Automation Letters</em>, т. 10, вып. 6, 2025, doi: <a href="https://doi.org/10.1109/LRA.2025.3568323">10.1109/LRA.2025.3568323</a>.</div>
-</div>
-<div id="ref-oMPPI" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[16] </div><div class="csl-right-inline">S. Yan и S. Devasia, <span>«Output-Sampled Model Predictive Path Integral Control (<span>o-MPPI</span>) for Increased Efficiency»</span>, 2023, Доступно на: <a href="https://arxiv.org/abs/2309.13201">https://arxiv.org/abs/2309.13201</a></div>
-</div>
 <div id="ref-CSVTO" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[17] </div><div class="csl-right-inline">T. Power и D. Berenson, <span>«Constrained Stein Variational Trajectory Optimization»</span>, <em>IEEE Transactions on Robotics</em>, 2024, Доступно на: <a href="https://arxiv.org/abs/2308.12110">https://arxiv.org/abs/2308.12110</a></div>
+<div class="csl-left-margin">[13] </div><div class="csl-right-inline">T. Power и D. Berenson, <span>«Constrained Stein Variational Trajectory Optimization»</span>, <em>IEEE Transactions on Robotics</em>, 2024, Доступно на: <a href="https://arxiv.org/abs/2308.12110">https://arxiv.org/abs/2308.12110</a></div>
 </div>
 <div id="ref-WangCSMPC" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[18] </div><div class="csl-right-inline">X. Wang, H. Li, D. Wang, X. Huang, и Z. Jiang, <span>«Constrained Sampling-Based <span>MPC</span> Using Path Integral for Collision-Free Robot Manipulation»</span>, <em>IEEE Transactions on Systems, Man, and Cybernetics: Systems</em>, т. 55, вып. 11, сс. 8701–8714, 2025, doi: <a href="https://doi.org/10.1109/TSMC.2025.3611922">10.1109/TSMC.2025.3611922</a>.</div>
+<div class="csl-left-margin">[14] </div><div class="csl-right-inline">X. Wang, H. Li, D. Wang, X. Huang, и Z. Jiang, <span>«Constrained Sampling-Based <span>MPC</span> Using Path Integral for Collision-Free Robot Manipulation»</span>, <em>IEEE Transactions on Systems, Man, and Cybernetics: Systems</em>, т. 55, вып. 11, сс. 8701–8714, 2025, doi: <a href="https://doi.org/10.1109/TSMC.2025.3611922">10.1109/TSMC.2025.3611922</a>.</div>
 </div>
 <div id="ref-UdwadiaKalabaApproach" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[19] </div><div class="csl-right-inline">F. Udwadia и R. E. Kalaba, <span>«A new perspective on constrained motion»</span>, <em>Proceedings of the Royal Society of London. Series A: Mathematical and Physical Sciences</em>, т. 439, вып. 1906, сс. 407–410, 1992, doi: <a href="https://doi.org/10.1098/rspa.1992.0158">10.1098/rspa.1992.0158</a>.</div>
+<div class="csl-left-margin">[15] </div><div class="csl-right-inline">F. Udwadia и R. E. Kalaba, <span>«A new perspective on constrained motion»</span>, <em>Proceedings of the Royal Society of London. Series A: Mathematical and Physical Sciences</em>, т. 439, вып. 1906, сс. 407–410, 1992, doi: <a href="https://doi.org/10.1098/rspa.1992.0158">10.1098/rspa.1992.0158</a>.</div>
 </div>
 <div id="ref-tikhonov1977" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[20] </div><div class="csl-right-inline">A. N. Tikhonov и V. Y. Arsenin, <em>Solutions of Ill-Posed Problems</em>. Washington, D.C.: Winston &amp; Sons, 1977.</div>
+<div class="csl-left-margin">[16] </div><div class="csl-right-inline">A. N. Tikhonov и V. Y. Arsenin, <em>Solutions of Ill-Posed Problems</em>. Washington, D.C.: Winston &amp; Sons, 1977.</div>
 </div>
 <div id="ref-baumgarte1972" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[21] </div><div class="csl-right-inline">J. Baumgarte, <span>«Stabilization of constraints and integrals of motion in dynamical systems»</span>, <em>Computer Methods in Applied Mechanics and Engineering</em>, т. 1, вып. 1, сс. 1–16, 1972, doi: <a href="https://doi.org/10.1016/0045-7825(72)90018-7">10.1016/0045-7825(72)90018-7</a>.</div>
+<div class="csl-left-margin">[17] </div><div class="csl-right-inline">J. Baumgarte, <span>«Stabilization of constraints and integrals of motion in dynamical systems»</span>, <em>Computer Methods in Applied Mechanics and Engineering</em>, т. 1, вып. 1, сс. 1–16, 1972, doi: <a href="https://doi.org/10.1016/0045-7825(72)90018-7">10.1016/0045-7825(72)90018-7</a>.</div>
 </div>
 <div id="ref-todorov2012mujoco" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[22] </div><div class="csl-right-inline">E. Todorov, T. Erez, и Y. Tassa, <span>«<span>MuJoCo</span>: A physics engine for model-based control»</span>, в <em>2012 IEEE/RSJ International Conference on Intelligent Robots and Systems</em>, IEEE, 2012, сс. 5026–5033. doi: <a href="https://doi.org/10.1109/IROS.2012.6386109">10.1109/IROS.2012.6386109</a>.</div>
+<div class="csl-left-margin">[18] </div><div class="csl-right-inline">E. Todorov, T. Erez, и Y. Tassa, <span>«<span>MuJoCo</span>: A physics engine for model-based control»</span>, в <em>2012 IEEE/RSJ International Conference on Intelligent Robots and Systems</em>, IEEE, 2012, сс. 5026–5033. doi: <a href="https://doi.org/10.1109/IROS.2012.6386109">10.1109/IROS.2012.6386109</a>.</div>
 </div>
 <div id="ref-Milioshin2024UdwadiaKalaba" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[23] </div><div class="csl-right-inline">I. Milioshin, <span>«Feedback Control over Constrained Robotic Systems through the Udwadia–Kalaba Approach»</span>, Bachelor's Thesis, Innopolis University, 2024. Доступно на: <a href="https://github.com/someilay/thesis">https://github.com/someilay/thesis</a></div>
+<div class="csl-left-margin">[19] </div><div class="csl-right-inline">I. Milioshin, <span>«Feedback Control over Constrained Robotic Systems through the Udwadia–Kalaba Approach»</span>, Bachelor's Thesis, Innopolis University, 2024. Доступно на: <a href="https://github.com/someilay/thesis">https://github.com/someilay/thesis</a></div>
 </div>
 </div>
 </section>
